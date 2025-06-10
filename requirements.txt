@@ -9,3 +9,4 @@ Sastrawi
 wordcloud
 requests
 gensim
+tensorflow
