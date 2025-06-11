@@ -3,14 +3,14 @@ import csv
 from google_play_scraper import reviews, Sort
 
 scrap, _ = reviews(
-    'com.mobile.legends',
+    'com.twitter.android',
     lang='id',
     country='id',
     sort = Sort.MOST_RELEVANT,
     count=10000
 )
 
-with open('ulasan_mytelkomsel.csv', mode='w', newline='', encoding='utf-8') as file:
+with open('ulasan_x.csv', mode='w', newline='', encoding='utf-8') as file:
     writer = csv.writer(file)
     writer.writerow(['Review'])
     for review in scrap:
@@ -20,7 +20,7 @@ with open('ulasan_mytelkomsel.csv', mode='w', newline='', encoding='utf-8') as f
 df = pd.DataFrame(scrap)
 df.shape
 df.head()
-df.to_csv('ulasan_ml.csv',index=False)
+df.to_csv('ulasan_x.csv',index=False)
 df = pd.DataFrame(scrap)
 jumlah_ulasan, jumlah_kolom = df.shape
 print(jumlah_ulasan,jumlah_kolom)
